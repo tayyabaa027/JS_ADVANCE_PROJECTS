@@ -8,7 +8,7 @@ A modern and interactive Alarm Clock built using **HTML**, **CSS**, and **JavaSc
 
 ## 📸 Preview
 
-![Alarm clock Preview](./image/Screenshot%202026-07-18%20223627.png)
+![Alarm clock Preview](./image/Screenshot%202026-07-19%20201145.png)
 
 ## ✨ Features
 
