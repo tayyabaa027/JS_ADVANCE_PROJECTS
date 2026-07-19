@@ -10,7 +10,7 @@ A modern and responsive Weather App built using **HTML**, **CSS**, and **JavaScr
 
 ## 📸 Preview
 
-> Search for any city to view its current weather, temperature, humidity, wind speed, and weather condition icon.
+![Weather App Preview](./img/Screenshot%202026-07-19%20195649.png)
 
 ---
 
