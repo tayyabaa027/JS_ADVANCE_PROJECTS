@@ -6,6 +6,10 @@ A modern and interactive Alarm Clock built using **HTML**, **CSS**, and **JavaSc
 
 🌐 **https://js-advance-projects-pomy.vercel.app/**
 
+## 📸 Preview
+
+![Alarm clock Preview](./image/Screenshot%202026-07-18%20223627.png)
+
 ## ✨ Features
 
 - ⏰ Real-time digital clock
