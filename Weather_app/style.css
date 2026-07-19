@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+body {
+    margin: 0;
+    /* background-color: #7eb9ed; */
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18)),
+        url("./img/ChatGPT\ Image\ Jul\ 19\,\ 2026\,\ 04_49_23\ PM.png");
+    background-size: cover;
+    background-position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#parent {
+
+    width: 370px;
+    height: 530px;
+    border-radius: 40px;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 3px solid rgba(255, 255, 255, .35);
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, .15),
+        inset 0 1px 1px rgba(255, 255, 255, .35);
+
+
+
+}
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.search input{
+    width: 200px;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    padding: 0 20px;
+    font-size: 18px;
+    color: #444;
+    background: rgba(255,255,255,.95);
+}
+
+.search button{
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+}
+
+.search button:hover{
+    background: #dff0ff;
+    transform: scale(1.05);
+}
+
+.search button i{
+    font-size: 20px;
+    color: #222;
+}
+.weather{
+    
+    text-align: center;
+    color:white;
+    text-shadow: 0 3px 8px rgba(0,0,0,.25);
+   
+}
+.weathericon{
+    
+    height: auto;
+    object-fit: contain;
+    
+}
+.details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 30px;
+    width: 350px;
+}
+.col img{
+    width: 30px;
+    height: auto;
+    margin: 10px;
+}
+.col{
+     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wind,.humidity{
+    font-size: 20px;
+    font-weight: bolder;
+}
+.temp{
+
+    font-size: 60px;
+}
+
