@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <title>Document</title>
+    <title>AI Image Generator</title>
 </head>
 
 <body>
     <div class="parent">
+
         <div class="header">
             <div class="logowrapper">
                 <div class="logo">
@@ -19,108 +20,105 @@
                 <h2>AI Image Generator</h2>
             </div>
             <div class="modechanger">
-                <button class="changer"> <i class="fa-solid fa-moon"></i></button>
-
+                <button type="button" class="changer" id="themeToggle" aria-label="Toggle dark mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
             </div>
         </div>
-        <div class="main-content">
 
+        <div class="main-content">
             <form class="prompt-form">
 
                 <div class="prompt-container">
-
                     <textarea class="prompt-input" placeholder="Describe your imagination in detail..." required
                         autofocus></textarea>
 
-                    <button type="button" class="prompt-btn">
+                    <button type="button" class="prompt-btn" id="randomPrompt" aria-label="Surprise me">
                         <i class="fa-solid fa-dice"></i>
                     </button>
+                </div>
+
+                <div class="options">
+
+                    <div class="select-wrapper">
+                        <select class="custom-select" id="model">
+                            <option value="">Select Model</option>
+                            <option value="black-forest-labs/FLUX.1-dev">FLUX.1-dev</option>
+                            <option value="black-forest-labs/FLUX.1-schnell">FLUX.1-schnell</option>
+                            <option value="stabilityai/stable-diffusion-xl-base-1.0">Stable Diffusion XL</option>
+                            <option value="runwayml/stable-diffusion-v1-5">Stable Diffusion v1.5</option>
+                            <option value="prompthero/openjourney">OpenJourney</option>
+                        </select>
+                    </div>
+
+                    <div class="select-wrapper">
+                        <select class="custom-select" id="count">
+                            <option value="">Image Count</option>
+                            <option value="1">1 Image</option>
+                            <option value="2">2 Images</option>
+                            <option value="3">3 Images</option>
+                            <option value="4">4 Images</option>
+                        </select>
+                    </div>
+
+                    <div class="select-wrapper">
+                        <select class="custom-select" id="ratio">
+                            <option value="">Aspect Ratio</option>
+                            <option value="1:1">Square (1:1)</option>
+                            <option value="16:9">Landscape (16:9)</option>
+                            <option value="9:16">Portrait (9:16)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="generate-btn">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        Generate
+                    </button>
+                </div>
+
+                <!-- Result Gallery Grid -->
+                <div class="gallery-grid" id="galleryGrid">
+
+                    <div class="img-card">
+                        <img src="./img/car.jpeg" class="result-img" alt="Generated result" />
+                        <div class="img-overlay">
+                            <button type="button" class="img-download-btn" aria-label="Download image">
+                                <i class="fa-solid fa-download"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="img-card">
+                        <img src="./img/car.jpeg" class="result-img" alt="Generated result" />
+                        <div class="img-overlay">
+                            <button type="button" class="img-download-btn" aria-label="Download image">
+                                <i class="fa-solid fa-download"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="img-card">
+                        <img src="./img/car.jpeg" class="result-img" alt="Generated result" />
+                        <div class="img-overlay">
+                            <button type="button" class="img-download-btn" aria-label="Download image">
+                                <i class="fa-solid fa-download"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="img-card">
+                        <img src="./img/car.jpeg" class="result-img" alt="Generated result" />
+                        <div class="img-overlay">
+                            <button type="button" class="img-download-btn" aria-label="Download image">
+                                <i class="fa-solid fa-download"></i>
+                            </button>
+                        </div>
+                    </div>
 
                 </div>
 
-
-
+            </form>
         </div>
-
-
-        <div class="options">
-
-            <div class="select-wrapper">
-                <select class="custom-select" id="model">
-                    <option value="">Select Model</option>
-                    <option value="black-forest-labs/FLUX.1-dev">FLUX.1-dev</option>
-                    <option value="black-forest-labs/FLUX.1-schnell">FLUX.1-schnell</option>
-                    <option value="stabilityai/stable-diffusion-xl-base-1.0">Stable Diffusion XL</option>
-                    <option value="runwayml/stable-diffusion-v1-5">Stable Diffusion v1.5</option>
-                    <option value="prompthero/openjourney">OpenJourney</option>
-                </select>
-            </div>
-
-            <div class="select-wrapper">
-                <select class="custom-select" id="count">
-                    <option value="">Image Count</option>
-                    <option value="1">1 Image</option>
-                    <option value="2">2 Images</option>
-                    <option value="3">3 Images</option>
-                    <option value="4">4 Images</option>
-                </select>
-            </div>
-
-            <div class="select-wrapper">
-                <select class="custom-select" id="ratio">
-                    <option value="">Aspect Ratio</option>
-                    <option value="1:1">Square (1:1)</option>
-                    <option value="16:9">Landscape (16:9)</option>
-                    <option value="9:16">Portrait (9:16)</option>
-                </select>
-            </div>
-            <button>
-                <i class="fa-solid fa-wand-magic-sparkles"></i>
-                Generate
-            </button>
-        </div>
-        <!-- Result Gallery Grid -->
-        <div class="gallery-grid">
-
-            <div class="img-card">
-                <img src="./img/car.jpeg" class="result-img" />
-
-                <div class="img-overlay">
-                    <button class="img-download-btn">
-                        <i class="fa-solid fa-download"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="img-card">
-                <img src="./img/car.jpeg" class="result-img" />
-
-                <div class="img-overlay">
-                    <button class="img-download-btn">
-                        <i class="fa-solid fa-download"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="img-card">
-                <img src="./img/car.jpeg" class="result-img" />
-
-                <div class="img-overlay">
-                    <button class="img-download-btn">
-                        <i class="fa-solid fa-download"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="img-card">
-                <img src="./img/car.jpeg" class="result-img" />
-
-                <div class="img-overlay">
-                    <button class="img-download-btn">
-                        <i class="fa-solid fa-download"></i>
-                    </button>
-                </div>
-            </div>
-
-        </div>
-        </form>
     </div>
 
     <script src="./script.js"></script>

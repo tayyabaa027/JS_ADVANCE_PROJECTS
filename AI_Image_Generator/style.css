@@ -65,12 +65,13 @@ body {
 
 .options {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
     margin-top: 20px;
 }
 
 .select-wrapper {
-    flex: 1;
+    flex: 1 1 140px;
 }
 
 .custom-select {
@@ -86,6 +87,7 @@ body {
 
 .options button {
     width: 170px;
+    height: 50px;
     border: none;
     border-radius: 12px;
     background: #3a2361;
@@ -162,11 +164,12 @@ body {
 
 .img-card {
     max-width: 300px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-   
+    margin: 0 auto;
 }
 
 .img-card img {
@@ -226,7 +229,7 @@ body {
       Mobile
 ========================== */
 
-@media (max-width: 768px) {
+@media (max-width: 784px) {
 
     body {
         padding: 15px;
@@ -259,6 +262,7 @@ body {
 
     .select-wrapper {
         width: 100%;
+        flex: 1 1 auto;
     }
 
     .custom-select {
@@ -268,6 +272,7 @@ body {
     .options button {
         width: 100%;
         height: 50px;
+        flex: 0 0 auto;
     }
 
     .prompt-input {
@@ -283,6 +288,18 @@ body {
         right: 15px;
         bottom: 15px;
         font-size: 16px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .img-card {
+        max-width: 100%;
+    }
+
+    .img-card img {
+        max-width: 100%;
     }
 }
 
