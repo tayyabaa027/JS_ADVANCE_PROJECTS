@@ -54,7 +54,7 @@ changemode.addEventListener("click", () => {
    }
 });
 const createimgcard = (selectedModel, imageCount, aspectRatio, promptText) => {
-
+ console.log("imagess");
 }
 
 const handleformsubmit = (e) => {
