@@ -3,7 +3,6 @@ const body = document.querySelector("body");
 const card = document.querySelector(".parent");
 const input = document.querySelector(".prompt-input");
 const dropdowns = document.querySelectorAll(".custom-select");
-const promptInput = document.querySelector(".prompt-input");
 const promptBtn = document.querySelector(".prompt-btn");
 const promptform = document.querySelector(".prompt-form");
 const model = document.getElementById("model");
@@ -31,6 +30,7 @@ changemode.addEventListener("click", () => {
    if (change.classList.contains("fa-sun")) {
       body.style.background = "linear-gradient(135deg,#182a5b,#5a3f88,#35559a)";
       body.style.color = "white";
+      input.style.color="white";
       card.style.background = "#07173a";
       input.style.background = "#081634";
       dropdowns.forEach((Element) => {
@@ -41,6 +41,7 @@ changemode.addEventListener("click", () => {
 
    }
    else {
+      input.style.color="black";
       body.style.background = "linear-gradient(135deg,#6b82c0,#927bb8,#6b93e7)";
       body.style.color = "black";
       card.style.background = "white";
@@ -61,13 +62,13 @@ const handleformsubmit = (e) => {
    const selectedModel = model.value;
    const aspectRatio = ratio.value || "1:1";
    const imageCount = parseInt(count.value) || 1;
-   const promptText = promptInput.value.trim();
+   const promptText = input.value.trim();
    createimgcard(selectedModel, imageCount, aspectRatio, promptText);
 
 }
 
 promptBtn.addEventListener("click", () => {
-   promptInput.value = examplePrompts[Math.floor(Math.random() * examplePrompts.length)];
+   input.value = examplePrompts[Math.floor(Math.random() * examplePrompts.length)];
 });
 
 promptform.addEventListener("submit", handleformsubmit);
